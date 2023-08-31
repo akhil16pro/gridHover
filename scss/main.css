@@ -16,6 +16,9 @@ grid-list {
   background: #2a2b3a;
   gap: 1px;
   overflow: hidden; }
+  @media only screen and (max-width: 1024px) {
+    grid-list {
+      grid-template-columns: repeat(2, 1fr); } }
   grid-list::after {
     content: '';
     position: relative;
@@ -27,6 +30,9 @@ grid {
   background: #000;
   --x: 10px;
   --y: 20px; }
+  @media only screen and (max-width: 767px) {
+    grid {
+      padding: 0.7rem; } }
   grid .inner {
     height: 100%;
     display: grid;
@@ -51,6 +57,10 @@ grid {
       z-index: 55;
       pointer-events: none;
       width: 20%; }
+      @media only screen and (max-width: 767px) {
+        grid .topBox img,
+        grid .topBox svg {
+          width: 32%; } }
     grid .topBox.mActive .hoverEl {
       opacity: 1; }
     grid .topBox:after {
@@ -78,6 +88,12 @@ grid {
     transition: opacity 0.25s ease-in-out;
     -webkit-mask-image: radial-gradient(19vw circle at var(--x) var(--y), black 20%, rgba(0, 0, 0, 0.25), transparent);
     mask-image: radial-gradient(19vw circle at var(--x) var(--y), black 20%, rgba(0, 0, 0, 0.25), transparent); }
+    @media only screen and (max-width: 980px) {
+      grid .hoverEl {
+        font-size: 11px; } }
+    @media only screen and (max-width: 767px) {
+      grid .hoverEl {
+        font-size: 8px; } }
 
 .textBox p {
   margin: 0;
@@ -88,5 +104,12 @@ grid {
   @media only screen and (min-width: 1025px) and (max-width: 1370px) and (min-height: 500px) and (max-height: 670px) {
     .textBox p {
       -webkit-line-clamp: 3; } }
+  @media only screen and (max-width: 1024px) {
+    .textBox p {
+      -webkit-line-clamp: 3; } }
+  @media only screen and (max-width: 767px) {
+    .textBox p {
+      -webkit-line-clamp: 2;
+      font-size: 12px; } }
 
 /*# sourceMappingURL=main.css.map */
