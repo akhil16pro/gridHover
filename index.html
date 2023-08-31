@@ -152,8 +152,6 @@
           })
 
           el.addEventListener('mouseleave', (e) => {
-            //  textRandomEl.innerHTML = ''
-
             el.classList.remove('mActive')
           })
 
@@ -165,46 +163,9 @@
           })
         })
       },
-      moreBtn: () => {
-        let more = document.querySelectorAll('[data-more]')
-
-        more.forEach((btn) => {
-          let elText = btn.querySelector('span').textContent,
-            textArr = elText.split('')
-          wd = btn.querySelector('span').getBoundingClientRect().width
-
-          console.log(wd)
-          //static button width setting
-          btn.style.cssText = 'width:' + wd + 'px'
-
-          btn.addEventListener('mouseenter', (e) => {
-            e.preventDefault()
-            let i = 0,
-              tempSt = ''
-            const wordBind = setInterval(() => {
-              if (i < textArr.length) {
-                tempSt += textArr[i]
-                let tempText =
-                  i == 0
-                    ? APG.genRandonString(textArr.length)
-                    : tempSt + APG.genRandonString(textArr.length - i - 1)
-                btn.querySelector('span').innerHTML = tempText
-
-                i++
-              }
-            }, 50)
-
-            setTimeout(() => {
-              btn.querySelector('span').innerHTML = elText
-              clearInterval(wordBind)
-            }, 600)
-          })
-        })
-      },
     }
 
     setTimeout(() => {
-      APG.moreBtn()
       APG.grid()
     }, 100)
   </script>
